@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<GridPane id="GridPane" prefHeight="400.0" prefWidth="600.0" 
+        styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" 
+        fx:controller="controllers.MainSceneController"
+        alignment="center" hgap="10" vgap="10">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+    <stylesheets> <URL value="@/styling/main_scene.css"/> </stylesheets>
+    
+    <Text text=""/>
+    
+</GridPane>
