@@ -8,33 +8,33 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
 
-<GridPane id="MainGrid" prefHeight="300.0" prefWidth="600.0" 
-        styleClass="main_scene" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane id="MainGrid" xmlns:fx="http://javafx.com/fxml/1">
     <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
     <stylesheets> <URL value="@/styling/main_scene.css"/> </stylesheets>
     
     <!--Each section is split into grids-->
-    <GridPane id="FileControls" xmlns:fx="http://javafx.com/fxml/1"
-            GridPane.columnIndex="0" GridPane.rowIndex="0">
-        <Text text="FileControls"/>
-        <TextField fx:id="chosen_dir"/>
-        <Button text="..." onAction="#handleChooseDir"/>
-        <Button text="Generate Random Image" onAction="#handleRandImg"/>
+    <GridPane id="FileControls" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Text text="FileControls" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="chosen_dir" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Button text="..." onAction="#handleChooseDir" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button text="Generate Random Image" onAction="#handleRandImg" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Button text="Toggle Border" onAction="#ToggleBorder" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Button text="Add to Window" onAction="#AddWindow" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
     </GridPane>
     
-    <GridPane id="GalleryControls" xmlns:fx="http://javafx.com/fxml/1"
-            GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <GridPane id="GalleryControls" GridPane.columnIndex="0" GridPane.rowIndex="1">
         <Text text="Gallery Controls"/>
+        <Button text="Add to Gallery" onAction="#AddGallery" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Button text="Remove from Gallery" onAction="#RmGallery" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Button text="Tessellate Gallery" onAction="#Tessellate" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
     </GridPane>
     
-    <GridPane id="ImagePreview" xmlns:fx="http://javafx.com/fxml/1"
-            GridPane.columnIndex="1" GridPane.rowIndex="0">
+    <GridPane id="ImagePreview" GridPane.columnIndex="1" GridPane.rowIndex="0">
         <Text text="Image Preview"/>
         <ImageView fx:id="img_preview"/>
     </GridPane>
     
-    <GridPane id="Gallery" xmlns:fx="http://javafx.com/fxml/1"
-            GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <GridPane id="Gallery" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <Text text="Gallery"/>
     </GridPane>
     
