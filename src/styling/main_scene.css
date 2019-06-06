@@ -1,30 +1,7 @@
-GridPane {
-    -fx-hgap: 5px;
-    -fx-vgap: 5px;
-}
+/*
+ * Empty Stylesheet file.
+ */
 
-#MainGrid {
-    -fx-pref-height: 300.0px;
-    -fx-pref-width: 600.0px;
-}
+.mainFxmlClass {
 
-#FileControls {
-    -fx-pref-height: 70%;
-    -fx-pref-width: 60%;
-    
-}
-
-#GalleryControls {
-    -fx-pref-height: 30%;
-    -fx-pref-width: 60%;
-}
-
-#ImagePreview {
-    -fx-pref-height: 70%;
-    -fx-pref-width: 40%;
-}
-
-#Gallery {
-    -fx-pref-height: 30%;
-    -fx-pref-width: 40%;
 }
