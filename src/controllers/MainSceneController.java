@@ -12,9 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.*;
 import javafx.scene.control.*;
+import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.util.Random;
 
 /**
  * FXML Controller class for the main scene of the program.
@@ -26,6 +29,7 @@ public class MainSceneController implements Initializable
 {
 	@FXML private ImageView img_preview;
 	@FXML private TextField chosen_dir;
+	@FXML private Text err_msg;
 	private Stage primaryStage;
 	private URL url;
 	private ResourceBundle rb;
@@ -58,8 +62,25 @@ public class MainSceneController implements Initializable
 	 * @param e the event that was generated when button was pressed
 	 */
 	@FXML 
-	protected void randImg(ActionEvent e) {
-		
+	protected void randImg(ActionEvent e) throws MalformedURLException {
+		File tmp_dir = new File(chosen_dir.getText());
+		if (tmp_dir.exists()) {
+			File[] imgs = tmp_dir.listFiles((dir, name) -> { 
+				name = name.toLowerCase();
+				return name.endsWith(".jpg") || name.endsWith(".png");
+			});
+			Random rand = new Random();
+			int rand_num = rand.nextInt(imgs.length);
+			
+			/*String str = imgs[rand_num].getPath();
+			Image img = new Image("home/chris/Pictures/Turing Machine.jpg");
+			img_preview.setImage(img);*/
+			img_preview.setImage(new Image(imgs[rand_num].toURI().toURL().toExternalForm()));
+		}
+		else {
+			err_msg.setVisible(true);
+			chosen_dir.getStyleClass().add("error");
+		}
 	}
 	
 	@FXML

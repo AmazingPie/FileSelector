@@ -28,3 +28,12 @@ GridPane {
     -fx-pref-height: 180px;
     -fx-pref-width: 400px;
 }
+
+.error {
+    -fx-border-color: red;
+    -fx-border-width: 1px;
+    -fx-border-height: 1px;
+    -fx-border-style: none line-cap round;
+    
+    -fx-fill: red;
+}
