@@ -48,9 +48,9 @@ public class MainSceneController implements Initializable
 	 * @param e the event that was generated when button was pressed
 	 */
 	@FXML
-	protected void handleChooseDir(ActionEvent e) {
+	protected void chooseDir(ActionEvent e) {
 		DirectoryChooser dc = new DirectoryChooser();
-		File chosen_file = dc.showDialog(primaryStage);
+		chosen_dir.setText(dc.showDialog(primaryStage).getPath());
 	}
 	
 	/**
@@ -58,17 +58,17 @@ public class MainSceneController implements Initializable
 	 * @param e the event that was generated when button was pressed
 	 */
 	@FXML 
-	protected void handleRandImg(ActionEvent e) {
+	protected void randImg(ActionEvent e) {
 		
 	}
 	
 	@FXML
-	protected void toggleBorder(ActionEvent e) {
+	protected void togBorder(ActionEvent e) {
 		
 	}
 	
 	@FXML
-	protected void addWindow(ActionEvent e) {
+	protected void addWin(ActionEvent e) {
 		
 	}
 	

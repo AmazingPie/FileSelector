@@ -16,10 +16,10 @@
     <GridPane id="FileControls" GridPane.columnIndex="0" GridPane.rowIndex="0">
         <Text text="FileControls" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
         <TextField fx:id="chosen_dir" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <Button text="..." onAction="#handleChooseDir" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        <Button text="Generate Random Image" onAction="#handleRandImg" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Button text="..." onAction="#chooseDir" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button text="Generate Random Image" onAction="#randImg" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
         <Button text="Toggle Border" onAction="#toggleBorder" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-        <Button text="Add to Window" onAction="#addWindow" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Button text="Add to Window" onAction="#addWin" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
     </GridPane>
     
     <GridPane id="GalleryControls" GridPane.columnIndex="0" GridPane.rowIndex="1">
