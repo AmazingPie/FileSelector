@@ -62,4 +62,29 @@ public class MainSceneController implements Initializable
 		
 	}
 	
+	@FXML
+	protected void toggleBorder(ActionEvent e) {
+		
+	}
+	
+	@FXML
+	protected void addWindow(ActionEvent e) {
+		
+	}
+	
+	@FXML
+	protected void addGallery(ActionEvent e) {
+		
+	}
+	
+	@FXML
+	protected void rmGallery(ActionEvent e) {
+		
+	}
+	
+	@FXML
+	protected void tessellate(ActionEvent e) {
+		
+	}
+	
 }

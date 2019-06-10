@@ -18,15 +18,15 @@
         <TextField fx:id="chosen_dir" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
         <Button text="..." onAction="#handleChooseDir" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
         <Button text="Generate Random Image" onAction="#handleRandImg" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-        <Button text="Toggle Border" onAction="#ToggleBorder" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-        <Button text="Add to Window" onAction="#AddWindow" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Button text="Toggle Border" onAction="#toggleBorder" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Button text="Add to Window" onAction="#addWindow" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
     </GridPane>
     
     <GridPane id="GalleryControls" GridPane.columnIndex="0" GridPane.rowIndex="1">
-        <Text text="Gallery Controls"/>
-        <Button text="Add to Gallery" onAction="#AddGallery" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <Button text="Remove from Gallery" onAction="#RmGallery" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-        <Button text="Tessellate Gallery" onAction="#Tessellate" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Text text="Gallery Controls" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Button text="Add to Gallery" onAction="#addGallery" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Button text="Remove from Gallery" onAction="#rmGallery" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button text="Tessellate Gallery" onAction="#tessellate" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
     </GridPane>
     
     <GridPane id="ImagePreview" GridPane.columnIndex="1" GridPane.rowIndex="0">

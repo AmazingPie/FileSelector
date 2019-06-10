@@ -4,27 +4,27 @@ GridPane {
 }
 
 #MainGrid {
-    -fx-pref-height: 300.0px;
-    -fx-pref-width: 600.0px;
+    -fx-pref-height: 600.0px;
+    -fx-pref-width: 1000.0px;
 }
 
 #FileControls {
-    -fx-pref-height: 70%;
-    -fx-pref-width: 60%;
+    -fx-pref-height: 420px;
+    -fx-pref-width: 600px;
     
 }
 
 #GalleryControls {
-    -fx-pref-height: 30%;
-    -fx-pref-width: 60%;
+    -fx-pref-height: 180px;
+    -fx-pref-width: 600px;
 }
 
 #ImagePreview {
-    -fx-pref-height: 70%;
-    -fx-pref-width: 40%;
+    -fx-pref-height: 420px;
+    -fx-pref-width: 400px;
 }
 
 #Gallery {
-    -fx-pref-height: 30%;
-    -fx-pref-width: 40%;
+    -fx-pref-height: 180px;
+    -fx-pref-width: 400px;
 }
