@@ -30,8 +30,11 @@ GridPane {
 }
 
 #Preview {
-    -fx-: ;
-    
+    -fx-pref-height: 400px;
+    -fx-pref-width: 380px;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+    -fx-background-size: stretch;
 }
 
 .error {

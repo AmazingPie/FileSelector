@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.*;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.scene.layout.Region;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
@@ -27,7 +28,7 @@ import java.util.Random;
  */
 public class MainSceneController implements Initializable
 {
-	@FXML private ImageView img_preview;
+	@FXML private Region img_preview;
 	@FXML private TextField chosen_dir;
 	@FXML private Text err_msg;
 	private Stage primaryStage;
@@ -71,7 +72,9 @@ public class MainSceneController implements Initializable
 			});
 			Random rand = new Random();
 			int rand_num = rand.nextInt(imgs.length);
-			img_preview.setImage(new Image(imgs[rand_num].toURI().toURL().toExternalForm()));
+			String image = imgs[rand_num].toURI().toURL().toExternalForm();
+			img_preview.setStyle("-fx-background-image: url('" + image + "');");
+			//img_preview.setImage(new Image(imgs[rand_num].toURI().toURL().toExternalForm()));
 		}
 		else {
 			err_msg.setVisible(true);
