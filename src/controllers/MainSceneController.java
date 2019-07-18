@@ -5,12 +5,17 @@
  */
 package controllers;
 
+import javafx.application.*;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.fxml.*;
+
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.io.IOException;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.image.*;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.layout.Region;
@@ -74,7 +79,6 @@ public class MainSceneController implements Initializable
 			int rand_num = rand.nextInt(imgs.length);
 			String image = imgs[rand_num].toURI().toURL().toExternalForm();
 			img_preview.setStyle("-fx-background-image: url('" + image + "');");
-			//img_preview.setImage(new Image(imgs[rand_num].toURI().toURL().toExternalForm()));
 		}
 		else {
 			err_msg.setVisible(true);
@@ -82,29 +86,65 @@ public class MainSceneController implements Initializable
 		}
 	}
 	
+	/**
+	 * Toggles the standard windows border on all windows generated
+	 * @param e the event that was generated when button was pressed
+	 */
 	@FXML
 	protected void togBorder(ActionEvent e) {
 		
 	}
 	
+	/**
+	 * Makes a new window with the current image being viewed
+	 * @param e the event that was generated when button was pressed
+	 */
 	@FXML
 	protected void addWin(ActionEvent e) {
-		
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getClassLoader().getResource("scenes/single_img_scene.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Image");
+			Region node = new Region();
+			String img = img_preview.getStyle();
+			node.setStyle(img + " -fx-background-size: stretch;");
+			//((Region)root).setBackground(img_preview.getBackground());
+			Scene scene = new Scene(node, 450, 450);
+            stage.setScene(scene);
+			//scene.getRoot().setStyle("-fx-background-image: url('" + image + "');");
+            stage.show();
+		}
+		catch(IOException ex) {
+			ex.printStackTrace();
+		}
 	}
 	
+	/**
+	 * Adds the current image being viewed to the gallery
+	 * @param e the event that was generated when button was pressed
+	 */
 	@FXML
 	protected void addGallery(ActionEvent e) {
 		
 	}
 	
+	/**
+	 * Removes currently selected image from the gallery
+	 * @param e the event that was generated when button was pressed
+	 */
 	@FXML
 	protected void rmGallery(ActionEvent e) {
 		
 	}
 	
+	/**
+	 * Makes a new window containing all images in the gallery which is tessellated to
+	 * have all images fit into one window
+	 * @param e the event that was generated when button was pressed
+	 */
 	@FXML
 	protected void tessellate(ActionEvent e) {
 		
 	}
-	
 }

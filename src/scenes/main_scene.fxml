@@ -14,7 +14,7 @@
     
     <!--Each section is split into grids-->
     <GridPane id="FileControls" GridPane.columnIndex="0" GridPane.rowIndex="0">
-        <Text text="FileControls" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Text text="File Controls" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
         <TextField fx:id="chosen_dir" promptText="path/to/directory" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
         <Button text="..." onAction="#chooseDir" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
         <Text text="DIRECTORY DOES NOT EXIST" fx:id="err_msg" styleClass="error" visible="false"  GridPane.columnIndex="2" GridPane.rowIndex="1"/>

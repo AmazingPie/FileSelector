@@ -30,11 +30,10 @@ public class FileSelector extends Application
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("scenes/main_scene.fxml"));
+		FXMLLoader loader = new FXMLLoader(main_scene);
 		loader.setLocation(main_scene);
 		loader.setController(new MainSceneController(primaryStage));
 		Parent root = (Parent)loader.load();
-		//MainSceneController controller = (MainSceneController)loader.getController();
 		Scene scene = new Scene(root, 1000, 600);
 		primaryStage.setTitle("File Selector");
 		primaryStage.setScene(scene);
