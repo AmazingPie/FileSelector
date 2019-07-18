@@ -71,10 +71,6 @@ public class MainSceneController implements Initializable
 			});
 			Random rand = new Random();
 			int rand_num = rand.nextInt(imgs.length);
-			
-			/*String str = imgs[rand_num].getPath();
-			Image img = new Image("home/chris/Pictures/Turing Machine.jpg");
-			img_preview.setImage(img);*/
 			img_preview.setImage(new Image(imgs[rand_num].toURI().toURL().toExternalForm()));
 		}
 		else {

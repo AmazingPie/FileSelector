@@ -29,6 +29,11 @@ GridPane {
     -fx-pref-width: 400px;
 }
 
+#Preview {
+    -fx-: ;
+    
+}
+
 .error {
     -fx-border-color: red;
     -fx-border-width: 1px;

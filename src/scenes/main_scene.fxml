@@ -32,7 +32,7 @@
     
     <GridPane id="ImagePreview" GridPane.columnIndex="1" GridPane.rowIndex="0">
         <Text text="Image Preview"/>
-        <ImageView fx:id="img_preview"/>
+        <Region fx:id="img_preview" id="Preview"/>
     </GridPane>
     
     <GridPane id="Gallery" GridPane.columnIndex="1" GridPane.rowIndex="1">
