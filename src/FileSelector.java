@@ -35,7 +35,7 @@ public class FileSelector extends Application
 		loader.setController(new MainSceneController(primaryStage));
 		Parent root = (Parent)loader.load();
 		//MainSceneController controller = (MainSceneController)loader.getController();
-		Scene scene = new Scene(root, 600, 300);
+		Scene scene = new Scene(root, 1000, 600);
 		primaryStage.setTitle("File Selector");
 		primaryStage.setScene(scene);
 		primaryStage.show(); 		
