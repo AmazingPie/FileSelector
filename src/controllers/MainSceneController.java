@@ -19,6 +19,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.geometry.Rectangle2D;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
@@ -39,6 +44,7 @@ public class MainSceneController implements Initializable
 	private Stage primaryStage;
 	private URL url;
 	private ResourceBundle rb;
+	private String curr_image;
 	
 	public MainSceneController(Stage primaryStage) {
 		this.primaryStage = primaryStage;
@@ -78,6 +84,9 @@ public class MainSceneController implements Initializable
 			Random rand = new Random();
 			int rand_num = rand.nextInt(imgs.length);
 			String image = imgs[rand_num].toURI().toURL().toExternalForm();
+			
+			curr_image = image;
+			
 			img_preview.setStyle("-fx-background-image: url('" + image + "');");
 		}
 		else {
@@ -101,23 +110,13 @@ public class MainSceneController implements Initializable
 	 */
 	@FXML
 	protected void addWin(ActionEvent e) {
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getClassLoader().getResource("scenes/single_img_scene.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Image");
-			Region node = new Region();
-			String img = img_preview.getStyle();
-			node.setStyle(img + " -fx-background-size: stretch;");
-			//((Region)root).setBackground(img_preview.getBackground());
-			Scene scene = new Scene(node, 450, 450);
-            stage.setScene(scene);
-			//scene.getRoot().setStyle("-fx-background-image: url('" + image + "');");
-            stage.show();
-		}
-		catch(IOException ex) {
-			ex.printStackTrace();
-		}
+		models.LetterboxWindow lb = new models.LetterboxWindow(curr_image);
+	}
+	
+	@FXML
+	protected void lockAsp(ActionEvent e) {
+		//stage.minWidthProperty().bind(scene.heightProperty().multiply(2));
+		//stage.minHeightProperty().bind(scene.widthProperty().divide(2));
 	}
 	
 	/**
