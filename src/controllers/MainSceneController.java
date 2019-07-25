@@ -45,7 +45,13 @@ public class MainSceneController implements Initializable
 	private URL url;
 	private ResourceBundle rb;
 	private String curr_image;
+	private Random rand;
 	
+	/**
+	 * Only using this constructor to pass in variables from the main program loop.
+	 * All other variables that need initialising should do so in initialize
+	 * @param primaryStage 
+	 */
 	public MainSceneController(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 	}
@@ -57,6 +63,7 @@ public class MainSceneController implements Initializable
 	public void initialize(URL url, ResourceBundle rb) {
 		this.url = url;
 		this.rb = rb;
+		rand = new Random();
 	}
 	
 	/**
@@ -87,7 +94,6 @@ public class MainSceneController implements Initializable
 				name = name.toLowerCase();
 				return name.endsWith(".jpg") || name.endsWith(".png");
 			});
-			Random rand = new Random();
 			int rand_num = rand.nextInt(imgs.length);
 			String image = imgs[rand_num].toURI().toURL().toExternalForm();
 			
