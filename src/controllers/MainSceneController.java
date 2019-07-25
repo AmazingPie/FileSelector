@@ -77,6 +77,12 @@ public class MainSceneController implements Initializable
 	protected void randImg(ActionEvent e) throws MalformedURLException {
 		File tmp_dir = new File(chosen_dir.getText());
 		if (tmp_dir.exists()) {
+			//Clear any previous error messages
+			err_msg.setVisible(false);
+			chosen_dir.getStyleClass().clear();
+			chosen_dir.getStyleClass().add("text-field");
+			chosen_dir.getStyleClass().add("text-input");
+			
 			File[] imgs = tmp_dir.listFiles((dir, name) -> { 
 				name = name.toLowerCase();
 				return name.endsWith(".jpg") || name.endsWith(".png");
@@ -86,7 +92,6 @@ public class MainSceneController implements Initializable
 			String image = imgs[rand_num].toURI().toURL().toExternalForm();
 			
 			curr_image = image;
-			
 			img_preview.setStyle("-fx-background-image: url('" + image + "');");
 		}
 		else {
