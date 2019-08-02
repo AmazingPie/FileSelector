@@ -4,8 +4,8 @@ GridPane {
 }
 
 #MainGrid {
-    -fx-pref-height: 600.0px;
-    -fx-pref-width: 1000.0px;
+    -fx-pref-height: 600px;
+    -fx-pref-width: 1000px;
 }
 
 #FileControls {

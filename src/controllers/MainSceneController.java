@@ -5,25 +5,14 @@
  */
 package controllers;
 
-import javafx.application.*;
-import javafx.stage.*;
-import javafx.scene.*;
-import javafx.fxml.*;
-
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.io.IOException;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.layout.Region;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
-import javafx.geometry.Rectangle2D;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
@@ -41,6 +30,7 @@ public class MainSceneController implements Initializable
 	@FXML private Region img_preview;
 	@FXML private TextField chosen_dir;
 	@FXML private Text err_msg;
+	@FXML private Text preview_path;
 	private Stage primaryStage;
 	private URL url;
 	private ResourceBundle rb;
@@ -99,6 +89,9 @@ public class MainSceneController implements Initializable
 			
 			curr_image = image;
 			img_preview.setStyle("-fx-background-image: url('" + image + "');");
+			
+			String[] img_preview_text = image.split("/");
+			preview_path.setText(img_preview_text[img_preview_text.length-1]);
 		}
 		else {
 			err_msg.setVisible(true);

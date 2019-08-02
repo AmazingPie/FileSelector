@@ -31,8 +31,9 @@
     </GridPane>
     
     <GridPane id="ImagePreview" GridPane.columnIndex="1" GridPane.rowIndex="0">
-        <Text text="Image Preview"/>
-        <Region fx:id="img_preview" id="Preview"/>
+        <Text text="Image Preview" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Region fx:id="img_preview" id="Preview" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Text fx:id="preview_path" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
     </GridPane>
     
     <GridPane id="Gallery" GridPane.columnIndex="1" GridPane.rowIndex="1">
