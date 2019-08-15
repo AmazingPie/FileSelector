@@ -16,19 +16,23 @@ import javafx.stage.Stage;
  * @author jewelsea + modified by chris
  */
 public class LetterboxWindow {
+	protected Stage stage;
+	protected Scene scene;
+	protected Pane root;
+	
 	private Image image;
 
 	public LetterboxWindow(String url) {
 		image = new Image(url);
-		Pane root = createPane();
+		root = createPane();
 		
-		Stage stage = new Stage();
+		stage = new Stage();
 		stage.setTitle("Image");
-		Scene scene = new Scene(new Group(root));
+		scene = new Scene(new Group(root));
 		stage.setScene(scene);
 		stage.show();
-
-		letterbox(scene, root);
+		
+		letterbox();
 	}
 
   private StackPane createPane() {
@@ -53,12 +57,12 @@ public class LetterboxWindow {
     return stack;
   }
 
-	private void letterbox(final Scene scene, final Pane contentPane) {
+	private void letterbox() {
 		final double initWidth  = scene.getWidth();
 		final double initHeight = scene.getHeight();
 		final double ratio      = initWidth / initHeight;
 
-		SceneSizeChangeListener sizeListener = new SceneSizeChangeListener(scene, ratio,initHeight, initWidth, contentPane);
+		SceneSizeChangeListener sizeListener = new SceneSizeChangeListener(scene, ratio,initHeight, initWidth, root);
 		scene.widthProperty().addListener(sizeListener);
 		scene.heightProperty().addListener(sizeListener);
 	}

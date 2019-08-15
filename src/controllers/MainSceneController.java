@@ -114,7 +114,7 @@ public class MainSceneController implements Initializable
 	 */
 	@FXML
 	protected void addWin(ActionEvent e) {
-		models.LetterboxWindow lb = new models.LetterboxWindow(curr_image);
+		models.ZoomableLetterboxWindow lb = new models.ZoomableLetterboxWindow(curr_image);
 	}
 	
 	@FXML
