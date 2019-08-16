@@ -34,28 +34,35 @@ public class LetterboxWindow {
 		
 		letterbox();
 	}
+	
+	/**
+	 * @return the stage of the window
+	 */
+	public Stage getStage() {
+		return stage;
+	}
 
-  private StackPane createPane() {
-    final int MAX_HEIGHT = 400;
+	private StackPane createPane() {
+		final int MAX_HEIGHT = 400;
 
-    StackPane stack = new StackPane();
+		StackPane stack = new StackPane();
 
-    Pane content = new Pane();
+		Pane content = new Pane();
 
-    ImageView imageView = new ImageView(image);
-    imageView.setPreserveRatio(true);
-    imageView.setFitHeight(MAX_HEIGHT);
-    double width = imageView.getLayoutBounds().getWidth();
-    content.getChildren().add(imageView);
+		ImageView imageView = new ImageView(image);
+		imageView.setPreserveRatio(true);
+		imageView.setFitHeight(MAX_HEIGHT);
+		double width = imageView.getLayoutBounds().getWidth();
+		content.getChildren().add(imageView);
 
-    content.setMaxSize(width, MAX_HEIGHT);
-    content.setClip(new Rectangle(width, MAX_HEIGHT));
+		content.setMaxSize(width, MAX_HEIGHT);
+		content.setClip(new Rectangle(width, MAX_HEIGHT));
 
-    stack.getChildren().add(content);
-    stack.setStyle("-fx-background-color: black");
+		stack.getChildren().add(content);
+		stack.setStyle("-fx-background-color: black");
 
-    return stack;
-  }
+		return stack;
+	}
 
 	private void letterbox() {
 		final double initWidth  = scene.getWidth();

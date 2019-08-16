@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.Random;
+import java.util.ArrayList;
 
 /**
  * FXML Controller class for the main scene of the program.
@@ -36,6 +37,7 @@ public class MainSceneController implements Initializable
 	private ResourceBundle rb;
 	private String curr_image;
 	private Random rand;
+	private ArrayList<Stage> windows;
 	
 	/**
 	 * Only using this constructor to pass in variables from the main program loop.
@@ -54,6 +56,7 @@ public class MainSceneController implements Initializable
 		this.url = url;
 		this.rb = rb;
 		rand = new Random();
+		windows = new ArrayList();
 	}
 	
 	/**
@@ -115,12 +118,16 @@ public class MainSceneController implements Initializable
 	@FXML
 	protected void addWin(ActionEvent e) {
 		models.ZoomableLetterboxWindow lb = new models.ZoomableLetterboxWindow(curr_image);
+		windows.add(lb.getStage());
 	}
 	
+	/**
+	 * Close all other windows that have been spawned from the main control panel
+	 * @param e the event that was generated when button was pressed
+	 */
 	@FXML
-	protected void lockAsp(ActionEvent e) {
-		//stage.minWidthProperty().bind(scene.heightProperty().multiply(2));
-		//stage.minHeightProperty().bind(scene.widthProperty().divide(2));
+	protected void cleanup(ActionEvent e) {
+		windows.forEach((stage) -> stage.close());
 	}
 	
 	/**

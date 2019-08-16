@@ -21,6 +21,7 @@
         <Button text="Generate Random Image" onAction="#randImg" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
         <Button text="Toggle Border" onAction="#togBorder" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
         <Button text="Add to Window" onAction="#addWin" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Button text="Cleanup" onAction="#cleanup" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
     </GridPane>
     
     <GridPane id="GalleryControls" GridPane.columnIndex="0" GridPane.rowIndex="1">
