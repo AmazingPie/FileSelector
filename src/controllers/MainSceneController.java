@@ -19,6 +19,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.util.Random;
 import java.util.ArrayList;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class for the main scene of the program.
@@ -100,15 +101,6 @@ public class MainSceneController implements Initializable
 			err_msg.setVisible(true);
 			chosen_dir.getStyleClass().add("error");
 		}
-	}
-	
-	/**
-	 * Toggles the standard windows border on all windows generated
-	 * @param e the event that was generated when button was pressed
-	 */
-	@FXML
-	protected void togBorder(ActionEvent e) {
-		
 	}
 	
 	/**
